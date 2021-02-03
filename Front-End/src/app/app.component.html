@@ -1,0 +1,49 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class='navbar-brand'> {{pageTitle}} </a>
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a> -->
+        <a class="nav-item nav-link">Homes for Sale</a>
+        <a class="nav-item nav-link">Sell a House</a>
+        <a *ngIf="!loggedIn()" class="nav-item nav-link" [routerLink]="['/login']">Login</a>
+        <a *ngIf="loggedIn()" class=" nav-item nav-link">Welcome {{user.firstName}} </a>
+        <a *ngIf="loggedIn()" class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- SUB MENU -->
+<nav class=" navbar navbar-expand navbar-light bg-light " *ngIf="user">
+    <div class="navbar-nav ">
+        <a class="nav-item nav-link " [routerLink]="['/my-adverts']" >My Adverts</a>
+        <a class="nav-item nav-link ">My Profile</a>
+        <a class="nav-item nav-link ">Buy a House</a>
+        <a class="nav-item nav-link ">Sell a House</a>
+        <a class="nav-item nav-link ">Manage my Account</a>
+        <a class="nav-item nav-link ">My Seller Profile</a>
+        <a class="nav-item nav-link ">Favourite Houses</a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse" *ngIf="">
+        <a class="nav-item nav-link ">User Management</a>
+        <a class="nav-item nav-link ">Advert Managment</a>
+    </div>
+</nav>
+
+
+
+<!-- main app container -->
+<div class="app-container">
+    <alert></alert>
+    <router-outlet></router-outlet>
+    <br>
+    <br>
+</div>
+
+<!-- FOOTER -->
+<div class="navbar navbar-expand navbar-light bg-light">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link ">Footer</a>
+        <a class="nav-item nav-link ">Homes for Sale</a>
+        <a class="nav-item nav-link ">Sell a House</a>
+    </div>
+</div>

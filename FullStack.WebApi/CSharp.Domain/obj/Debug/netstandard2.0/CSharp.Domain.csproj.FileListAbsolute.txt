@@ -1,0 +1,9 @@
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\obj\Debug\netstandard2.0\CSharp.Domain.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\obj\Debug\netstandard2.0\CSharp.Domain.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\obj\Debug\netstandard2.0\CSharp.Domain.AssemblyInfo.cs
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\obj\Debug\netstandard2.0\CSharp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\bin\Debug\netstandard2.0\CSharp.Domain.deps.json
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\bin\Debug\netstandard2.0\CSharp.Domain.dll
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\bin\Debug\netstandard2.0\CSharp.Domain.pdb
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\obj\Debug\netstandard2.0\CSharp.Domain.dll
+C:\Users\USER\source\repos\FullStack.WebApi\CSharp.Domain\obj\Debug\netstandard2.0\CSharp.Domain.pdb

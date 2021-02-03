@@ -1,0 +1,9 @@
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\bin\Debug\netstandard2.0\FullStack.ViewModels.deps.json
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\bin\Debug\netstandard2.0\FullStack.ViewModels.dll
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\bin\Debug\netstandard2.0\FullStack.ViewModels.pdb
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\obj\Debug\netstandard2.0\FullStack.ViewModels.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\obj\Debug\netstandard2.0\FullStack.ViewModels.AssemblyInfoInputs.cache
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\obj\Debug\netstandard2.0\FullStack.ViewModels.AssemblyInfo.cs
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\obj\Debug\netstandard2.0\FullStack.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\obj\Debug\netstandard2.0\FullStack.ViewModels.dll
+C:\Users\USER\source\repos\FullStack.WebApi\FullStack.ViewModels\obj\Debug\netstandard2.0\FullStack.ViewModels.pdb
