@@ -1,0 +1,55 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class='navbar-brand' style="font-size: 15pt;"> {{pageTitle}} </a>
+    <div class="navbar-nav" style="font-size: 13pt;">
+        <a class="nav-item nav-link" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a> -->
+        <a class="nav-item nav-link">Homes for Sale</a>
+        <a class="nav-item nav-link">Sell a House</a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse" style="color: darkgray;">
+        <a *ngIf="!loggedIn()" class="nav-item nav-link" [routerLink]="['/login']" style="color: darkgray;">Login</a>
+        <a *ngIf="loggedIn()" class=" nav-item nav-link">Welcome {{user.firstName}} {{user.lastName}} </a>
+        <a *ngIf="loggedIn()" class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- SUB MENU -->
+<nav class=" navbar navbar-expand navbar-light bg-light " *ngIf="user" style="font-size: 13pt;">
+    <div class="navbar-nav " style=" color: darkgray;">
+        <a class="nav-item nav-link " [routerLink]="['/my-products']">My Adverts</a>
+        <a class="nav-item nav-link ">My Profile</a>
+        <a class="nav-item nav-link ">Buy a House</a>
+        <a class="nav-item nav-link ">Sell a House</a>
+        <a class="nav-item nav-link ">Manage my Account</a>
+        <a class="nav-item nav-link ">My Seller Profile</a>
+        <a class="nav-item nav-link ">Favourite Houses</a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end " id="navbarCollapse " style="color: darkgray;" *ngIf="">
+        <a class="nav-item nav-link ">User Management</a>
+        <a class="nav-item nav-link ">Advert Managment</a>
+    </div>
+</nav>
+
+
+
+<!-- main app container -->
+<div class="app-container ">
+    <alert></alert>
+    <router-outlet></router-outlet>
+    <br>
+    <br>
+</div>
+
+<!-- FOOTER -->
+<div class="navbar navbar-expand navbar-light bg-light " style="font-size: 13pt; height: 110px;">
+    <div class="navbar-nav ">
+        <a class="nav-item nav-link ">Footer</a>
+        <a class="nav-item nav-link ">Homes for Sale</a>
+        <a class="nav-item nav-link ">Sell a House</a>
+    </div>
+</div>
+
+<style>
+
+</style>

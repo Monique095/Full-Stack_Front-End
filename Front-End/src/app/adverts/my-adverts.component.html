@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-header">
+        <h3>{{pageTitle}}</h3>
+        <button class="btn btn-info" style="width:150px; float:right; margin-top: -40px; margin-right: 50px;" [routerLink]="['/products/0/edit']">
+            Create an Advert
+        </button>
+    </div>
+    <div class="card-body ">
+        <div class="row ">
+            <div class="table-responsive ">
+                <div *ngIf="products && products.length === 0" style="text-align: center;">
+                    <h4>You have NO Adverts to display!</h4>
+                </div>
+                <table class="table mb-0" *ngIf="products && products.length">
+                    <thead>
+                        <tr style="font-size: 14pt;">
+                            <th></th>
+                            <th>Advert Headline Text</th>
+                            <th>Advert Detail</th>
+                            <th>Province</th>
+                            <th>City</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products " style="font-size: 12.5pt;">
+                            <td>
+                            </td>
+                            <td>{{ product.advertHeadlineText }}</td>
+                            <td>{{ product.advertDetail }}</td>
+                            <td>{{ product.province }}</td>
+                            <td>{{ product.city }}</td>
+                            <td>{{ product.price | currency:"R":"symbol":"1.2-2" }}</td>
+                            <td style="color: red; font-weight: bold;">{{ product.status }}</td>
+                            <td>
+                                <button class="btn btn-info" style="width: 100px;" (click)="showDiv.previous = !showDiv.previous;showDiv.current = false;showDiv.next = false">
+                                    Action
+                                </button>
+                            </td>
+                            <td>
+                                <button *ngIf="showDiv.previous" class="btn btn-outline-secondary" [routerLink]="['/products', product.id, 'edit']">
+                                    Edit Post
+                                </button>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        Error: {{ errorMessage }}
+    </div>

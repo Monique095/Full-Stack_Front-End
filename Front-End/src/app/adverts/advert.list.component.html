@@ -1,0 +1,49 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">Search by:</div>
+
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table class="table mb-0" *ngIf="products && products.length ">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Product</th>
+                        <th>Descriptions</th>
+                        <th>Price</th>
+                        <th>Release Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>
+                        </td>
+                        <td>{{ product.advert }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.price | currency:"R":"symbol":"1.2-2" }}</td>
+                        <td>{{ product.releaseDate }}</td>
+                        <td>
+
+                            <button class="btn btn-outline-primary btn-sm" style="width:80px;" (click)='buyButton()' [routerLink]="['/products', product.id]">
+                             Buy
+                            </button>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+    Error: {{ errorMessage }}
+</div>
