@@ -1,0 +1,100 @@
+<div class="card">
+    <div class="card-header">
+        <h3>{{ pageTitle }}</h3>
+
+        <button class="btn btn-info" style="width:150px; float:right; margin-top: -40px; margin-right: 50px;" [routerLink]="['/my-adverts']" routerLinkActive="router-link-active">
+            Go Back
+        </button>
+    </div>
+    <div class="card-body">
+        <form novalidate (ngSubmit)="saveAdvert()" [formGroup]="myAdvertForm">
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="headlineTextId">Advert Headerline Text</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="headlineTextId" type="text" placeholder="Advert Headerline Text " formControlName="advertHeadlineText" [ngClass]="{'is-invalid': displayMessage.advertHeadlineText }" />
+                    <span class="invalid-feedback">
+                    {{displayMessage.advertHeadlineText}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="advertDetailId">Advert Details</label>
+                <div class="col-md-8">
+                    <textarea class="form-control" id="advertDetailId" type="text" placeholder="Advert Details" rows=5 formControlName="advertDetail" [ngClass]="{'is-invalid': displayMessage.advertDetail }"></textarea>
+                    <span class="invalid-feedback">
+                    {{displayMessage.advertDetail}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2">
+                <label class="col-md-2 col-form-label" for="provinceId">Province</label>
+                <div class="col-md-8">
+                    <select class="form-control" formControlName="provinceId" (ngModelChange)="onSelect($event)">
+                        <option [ngValue]=" null " [disabled]="true ">--Select a Province--</option>
+                        <option *ngFor="let province of provinces " [ngValue]="province.id" >{{province.provinceName}}</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2 ">
+                <label class="col-md-2 col-form-label " for="cityId ">City</label>
+                <div class="col-md-8 ">
+                    <select class="form-control " formControlName="cityId">
+                        <option [ngValue]=" null " [disabled]="true ">--Select a City--</option>
+                        <option *ngFor="let city of cities " [ngValue]="city.id">{{city.cityName}}</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2 ">
+                <label class="col-md-2 col-form-label " for="priceId ">Price</label>
+                <div class="col-md-8 ">
+                    <input class="form-control " id="priceId " type="number" placeholder="Price" formControlName="price" [ngClass]="{ 'is-invalid': displayMessage.price } " />
+                    <span class="invalid-feedback ">
+                    {{displayMessage.price}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2 ">
+                <label class="col-md-2 col-form-label " for="statusId "></label>
+                <div class="col-md-8 ">
+                    <br>
+                    <p>You can select your Advert Status here:</p>
+                    <select class="form-control " formControlName="status" [ngClass]="{ 'is-invalid': displayMessage.status } "> 
+                        <option [ngValue]="null " [disabled]="true ">Select Advert Status:</option>
+                        <option value="HIDE ">
+                        HIDE
+                        </option>
+                        <option value="LIVE ">
+                        LIVE
+                        </option>
+                    </select>
+                    <span class="invalid-feedback ">
+                        {{displayMessage.status}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row mb-2 ">
+                <div class="offset-md-2 col-md-4 ">
+                    <button class="btn btn-primary mr-3 " style="width:90px; " type="submit ">
+                    Post
+                    </button>
+                    <button class="btn btn-secondary mr-3 " style="width:90px; " type="button " title="Cancel your edits " [routerLink]="[ '/my-adverts'] ">
+                    Cancel
+                    </button>
+                    <button class="btn btn-danger " style="width:90px " type="button " title="Delete this advert " (click)="deleteMyAdvert() ">
+                    Delete
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="alert alert-danger " *ngIf="errorMessage ">{{errorMessage}} </div>
+    <div class="alert alert-success " *ngIf="successMessage ">{{successMessage}} </div>
+</div>

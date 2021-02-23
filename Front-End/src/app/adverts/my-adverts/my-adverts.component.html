@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-header">
+        <h3>My Adverts</h3>
+        <h5 style="font-size: 12pt;">{{pageTitle}}</h5>
+        <button class="btn btn-info" style="width:150px; float:right; margin-top: -50px; margin-right: 50px;" [routerLink]="['/adverts/0/edit']">
+            Create an Advert 
+        </button>
+    </div>
+    <div class="card-body ">
+        <div class="row ">
+            <div class="table-responsive ">
+
+                <div *ngIf="adverts && adverts.length === 0" style="text-align: center;">
+                    <h4>You have NO Adverts to display!</h4>
+                </div>
+
+                <table class="table mb-0" *ngIf="adverts && adverts.length">
+                    <thead>
+                        <tr style="font-size: 14pt;">
+                            <th></th>
+                            <th>Advert Headline Text</th>
+                            <th>Advert Detail</th>
+                            <th>Province</th>
+                            <th>City</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let advert of adverts " style="font-size: 12pt;">
+                            <td>
+                            </td>
+                            <td>{{ advert.advertHeadlineText }}</td>
+                            <td>{{ advert.advertDetail }}</td>
+                            <td>{{ advert.province }}</td>
+                            <td>{{ advert.city }} </td>
+                            <td>{{ advert.price | currency:"R":"symbol":"1.2-2" }}</td>
+                            <td style="color: red; font-weight: bold;">{{ advert.status }}</td>
+
+                            <td>
+                                <button class="btn btn-outline-secondary" [routerLink]="['/adverts', advert.id, 'edit']">
+                                    Edit Post
+                                </button>
+                            </td>
+
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf=" errorMessage " class="alert alert-danger ">
+    401 - You're Unathorized, please log in.
+</div>

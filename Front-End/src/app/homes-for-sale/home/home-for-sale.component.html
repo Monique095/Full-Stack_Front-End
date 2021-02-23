@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="card-header">
+        <div style="text-align: center; font-size: 14pt;">Search by:</div>
+        <select id="sort-by" (change)="sort($event)" class="form-control" style="float: right; width: 250px;">
+            <option [ngValue]="null" [disabled]="true">Order By</option>
+            <option value="High">Price High to Low</option>
+            <option value="Low">Price Low to High</option>
+        </select>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div>
+                <h3>{{pageTitle}}</h3>
+            </div>
+        </div>
+        <br>
+        <div class="table-responsive">
+            <div *ngIf="adverts && adverts.length === 0" style="text-align: center;">
+                <h4>There's no Properties for Sale, Come back later!</h4>
+            </div>
+
+            <table class="table mb-0" *ngIf="adverts && adverts.length">
+                <thead>
+                    <tr style="font-size: 14pt;">
+                        <th></th>
+                        <th>Advert Headline Text</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let advert of adverts" style="font-size: 12.5pt;">
+                    <tr>
+                        <td></td>
+                        <td><a [routerLink]="['/adverts', advert.id]">{{ advert.advertHeadlineText }}</a></td>
+                        <td>{{advert.province}} - {{ advert.city }}</td>
+                        <td>{{advert.price | currency:"R":"symbol":"1.2-2" }}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+<div *ngIf="errorMessage " class="alert alert-danger ">
+    Error: {{ errorMessage }}
+</div>
